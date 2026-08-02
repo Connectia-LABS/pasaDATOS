@@ -1,0 +1,35 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22.x"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate
+        run: |
+          go vet ./...
+          go test -race ./...
+          node --check internal/pasadatos/web/assets/desktop.js
+          node --check internal/pasadatos/web/assets/mobile.js
+      - name: Build
+        run: ./scripts/build-release.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pasadatos-${{ github.sha }}
+          path: |
+            release/*
+            deploy/bin/*

@@ -1,0 +1,18 @@
+services:
+  pasadatos:
+    ports: []
+    networks:
+      - pasadatos_proxy
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=${TRAEFIK_NETWORK:-traefik}
+      - traefik.http.routers.pasadatos.rule=Host(`${PASADATOS_DOMAIN}`)
+      - traefik.http.routers.pasadatos.entrypoints=${TRAEFIK_ENTRYPOINT:-websecure}
+      - traefik.http.routers.pasadatos.tls=true
+      - traefik.http.routers.pasadatos.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      - traefik.http.services.pasadatos.loadbalancer.server.port=8088
+
+networks:
+  pasadatos_proxy:
+    external: true
+    name: ${TRAEFIK_NETWORK:-traefik}

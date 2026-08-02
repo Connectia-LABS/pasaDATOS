@@ -1,0 +1,9 @@
+/release/*
+!/release/.gitkeep
+/cmd/installer/payload/*.exe
+/cmd/installer/payload/*.ico
+/deploy/bin/*
+!/deploy/bin/.gitkeep
+!/deploy/bin/SHA256SUMS.txt
+*.log
+.DS_Store

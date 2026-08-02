@@ -1,0 +1,19 @@
+services:
+  pasadatos:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pasadatos-relay:1.1.1
+    container_name: pasadatos-relay
+    restart: unless-stopped
+    environment:
+      PASADATOS_LISTEN: 0.0.0.0:8088
+      PASADATOS_DATA_DIR: /data
+      PASADATOS_PUBLIC_URL: ${PASADATOS_PUBLIC_URL:-}
+      PASADATOS_FILE_TTL_HOURS: ${PASADATOS_FILE_TTL_HOURS:-24}
+      PASADATOS_METADATA_TTL_HOURS: ${PASADATOS_METADATA_TTL_HOURS:-720}
+      PASADATOS_MAX_FILE_BYTES: ${PASADATOS_MAX_FILE_BYTES:-0}
+    volumes:
+      - ./data:/data
+    ports:
+      - "127.0.0.1:${PASADATOS_LOCAL_PORT:-8088}:8088"

@@ -1,0 +1,12 @@
+pasaDATOS 1.1.1
+
+1. Instalá pasaDATOS en la PC.
+2. Abrí la app y entrá en “Dispositivos”.
+3. Generá un código.
+4. Desde el celular, abrí la dirección que muestra la PC o escaneá el QR.
+5. Vinculá una sola vez y empezá a enviar archivos.
+
+Modo local: ambos equipos están en la misma red Wi-Fi.
+Modo remoto: desplegá el relay incluido y configurá su URL HTTPS en Ajustes.
+
+Los archivos recibidos en Windows se guardan, por defecto, en Descargas\pasaDATOS.

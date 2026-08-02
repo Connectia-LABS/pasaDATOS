@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#071426">
+  <title>pasaDATOS</title>
+  <link rel="icon" href="/assets/icon-192.png?v=1.1.1">
+  <script>
+    (() => { try { const mode = localStorage.getItem("pasadatos.theme.v1") || "system"; const dark = mode === "dark" || (mode === "system" && matchMedia("(prefers-color-scheme: dark)").matches); document.documentElement.dataset.theme = dark ? "dark" : "light"; document.documentElement.dataset.themeMode = mode; } catch {} })();
+  </script>
+  <link rel="stylesheet" href="/assets/app.css?v=1.1.1">
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07.07l2-2a5 5 0 0 0-7.07-7.07l-1.15 1.15"/><path d="M14 11a5 5 0 0 0-7.07-.07l-2 2A5 5 0 0 0 12 20l1.15-1.15"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.09A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.09A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.09A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.14.38.36.72.66.99.3.27.69.42 1.1.42H21v4h-.09a1.7 1.7 0 0 0-1.51.59Z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3M7 8l5-5 5 5"/><path d="M20 15v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4"/></symbol>
+    <symbol id="i-device" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="3"/><path d="M9 18h6"/></symbol>
+    <symbol id="i-pc" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7h-5V2"/><path d="M20 7a9 9 0 1 0 1 8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 20h.01M2 9a15 15 0 0 1 20 0"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H6a4 4 0 1 1 .8-7.9A6 6 0 0 1 18.5 9a5 5 0 0 1-1 10Z"/></symbol>
+    <symbol id="i-open" viewBox="0 0 24 24"><path d="M14 3h7v7M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"/></symbol>
+    <symbol id="i-auto" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+  </svg>
+
+  <div id="authError" class="auth-error hidden">
+    <div class="card"><div class="brand brand-centered"><div class="brand-logo-shell"><img class="brand-logo" src="/assets/brand-logo.png?v=1.1.1" alt="pasaDATOS"></div></div><h2>No se pudo abrir la app</h2><p class="muted">Abrí pasaDATOS desde el acceso directo de Windows. La interfaz local requiere la clave privada de esta instalación.</p></div>
+  </div>
+
+  <div id="desktopApp" class="desktop-app">
+    <aside class="desktop-sidebar">
+      <div class="brand"><div class="brand-logo-shell"><img class="brand-logo" src="/assets/brand-logo.png?v=1.1.1" alt="pasaDATOS"></div><div class="brand-edition">Transferencia segura</div></div>
+      <nav class="nav-stack" aria-label="Navegación principal">
+        <button class="nav-btn active" data-view="send"><span class="icon"><svg><use href="#i-send"/></svg></span><span>Enviar archivos</span></button>
+        <button class="nav-btn" data-view="link"><span class="icon"><svg><use href="#i-link"/></svg></span><span>Dispositivos</span></button>
+        <button class="nav-btn" data-view="history"><span class="icon"><svg><use href="#i-history"/></svg></span><span>Historial</span></button>
+        <button class="nav-btn" data-view="settings"><span class="icon"><svg><use href="#i-settings"/></svg></span><span>Ajustes</span></button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="local-address"><div class="label">Abrir en el celular</div><div id="sidebarAddress" class="value mono">Detectando red…</div></div>
+        <button id="exitApp" class="btn btn-ghost btn-sm"><span class="icon"><svg><use href="#i-x"/></svg></span>Salir de pasaDATOS</button>
+      </div>
+    </aside>
+
+    <main class="desktop-main">
+      <header class="desktop-topbar">
+        <div><div id="pageKicker" class="page-kicker">Transferencia de archivos</div><h1 id="pageHeading" class="page-heading">Enviar</h1></div>
+        <div class="top-actions">
+          <span id="connectionStatus" class="status-pill"><span class="status-dot"></span><span>Conectando…</span></span>
+          <button class="btn btn-icon btn-ghost theme-quick" data-theme-toggle aria-label="Cambiar tema">
+            <span class="icon" data-theme-icon="dark"><svg><use href="#i-moon"/></svg></span>
+            <span class="icon hidden" data-theme-icon="light"><svg><use href="#i-sun"/></svg></span>
+          </button>
+          <div class="segmented connection-tabs" aria-label="Modo de conexión"><button data-mode="local" class="active"><span class="status-mini"></span>Wi‑Fi local</button><button data-mode="remote">Remoto</button></div>
+        </div>
+      </header>
+
+      <section id="view-send" class="view active">
+        <div class="workspace-grid">
+          <div class="workspace-stack">
+            <div class="hero-card"><img class="hero-brand-symbol" src="/assets/brand-symbol.png?v=1.1.1" alt=""><div class="hero-eyebrow">Rápido · Privado · Sin registros</div><h2>De tu PC al celular —o al revés— sin vueltas.</h2><p>Elegí uno o varios archivos, seleccioná el dispositivo y enviá. Sin comprimir, sin cambiar formatos y sin pasar por WhatsApp.</p><div class="hero-metrics"><span class="metric-chip"><span class="icon"><svg><use href="#i-check"/></svg></span>Cualquier formato</span><span class="metric-chip"><span class="icon"><svg><use href="#i-check"/></svg></span>Archivos múltiples</span><span class="metric-chip"><span class="icon"><svg><use href="#i-check"/></svg></span>Historial y rutas</span></div></div>
+            <div class="card">
+              <div id="dropzone" class="dropzone"><div><div class="drop-icon"><span class="icon"><svg><use href="#i-upload"/></svg></span></div><h3>Arrastrá tus archivos acá</h3><p>También podés elegir varios desde el Explorador de Windows.</p><button id="pickFiles" class="btn btn-primary"><span class="icon"><svg><use href="#i-folder"/></svg></span>Elegir archivos</button></div></div>
+              <div id="selectedFiles" class="file-list"></div>
+              <div class="send-controls"><div class="field"><label for="peerSelect">Enviar a</label><select id="peerSelect" class="select"><option value="">Vinculá un dispositivo primero</option></select></div><button id="sendFiles" class="btn btn-cyan btn-wide" disabled><span class="icon"><svg><use href="#i-send"/></svg></span>Enviar archivos</button></div>
+            </div>
+            <div class="card"><div class="card-head"><div><h3 class="card-title">Transferencias activas</h3><p class="card-copy">El progreso se actualiza automáticamente.</p></div></div><div class="card-body"><div id="jobsList" class="jobs-list"></div></div></div>
+          </div>
+          <aside class="workspace-stack">
+            <div class="card quick-card"><h3 id="modeTitle">Wi‑Fi local</h3><p id="modeDescription">Los archivos viajan directamente por tu red. Es el modo más rápido y no usa Internet.</p><div class="mode-detail"><div class="mode-line"><span>Estado</span><strong id="modeOnline">Conectando…</strong></div><div class="mode-line"><span>Dispositivos</span><strong id="modePeers">0 vinculados</strong></div><div class="mode-line"><span>Destino recibido</span><strong id="receiveFolderMini" class="truncate">—</strong></div></div><div class="divider"></div><button class="btn btn-wide" data-go-view="link"><span class="icon"><svg><use href="#i-link"/></svg></span>Vincular otro dispositivo</button></div>
+            <div class="card quick-card"><h3>Recibidos en la PC</h3><p>Los archivos entrantes se guardan automáticamente en esta carpeta.</p><button id="openReceiveMini" class="btn btn-wide btn-ghost"><span class="icon"><svg><use href="#i-folder"/></svg></span>Abrir carpeta de recibidos</button></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="view-link" class="view">
+        <div class="link-grid">
+          <div class="workspace-stack">
+            <div class="card pair-card"><div class="card-head"><div><h3 class="card-title">Vincular este equipo</h3><p class="card-copy">Abrí la dirección en el celular o escaneá el QR. El código vence por seguridad.</p></div></div><div class="pair-stage"><div><span class="status-pill"><span class="status-dot online"></span>Sin cuenta ni contraseña</span><div id="pairCode" class="pair-code">— — — — —</div><div id="pairExpiry" class="pair-expiry">Generá un código para comenzar.</div><div class="form-actions" style="margin-top:18px"><button id="createPair" class="btn btn-primary"><span class="icon"><svg><use href="#i-refresh"/></svg></span>Generar código</button><button id="copyJoin" class="btn btn-ghost" disabled><span class="icon"><svg><use href="#i-copy"/></svg></span>Copiar enlace</button></div></div><div id="pairQR" class="qr-box"><span class="qr-placeholder">El QR aparecerá acá</span></div></div></div>
+            <div class="card"><div class="card-head"><div><h3 class="card-title">Dispositivos vinculados</h3><p class="card-copy">Podés enviar a cualquiera de estos equipos.</p></div></div><div id="devicesList" class="devices-list"></div></div>
+          </div>
+          <div class="card join-box"><h3 class="card-title">Ingresar un código</h3><p class="card-copy">Usalo cuando el código fue generado en el celular o en otra computadora.</p><div class="inline-form" style="margin-top:18px"><input id="joinCode" class="input mono" maxlength="11" placeholder="ABCDE-FGHIJ" autocomplete="off"><button id="joinPair" class="btn btn-cyan">Vincular</button></div><div class="divider"></div><div class="mode-detail"><div class="mode-line"><span>Modo actual</span><strong id="linkMode">Wi‑Fi local</strong></div><div class="mode-line"><span>Dirección</span><strong id="linkAddress" class="truncate">—</strong></div></div></div>
+        </div>
+      </section>
+
+      <section id="view-history" class="view">
+        <div class="history-toolbar"><div class="search-wrap"><span class="icon"><svg><use href="#i-search"/></svg></span><input id="historySearch" class="input" placeholder="Buscar archivo, dispositivo o ruta"></div><button id="clearHistory" class="btn btn-danger btn-sm"><span class="icon"><svg><use href="#i-trash"/></svg></span>Limpiar historial</button></div>
+        <div class="card"><div class="card-head"><div><h3 class="card-title">Actividad</h3><p class="card-copy">Archivos enviados y recibidos con sus rutas completas.</p></div></div><div class="card-body"><div id="historyList" class="history-list"></div></div></div>
+      </section>
+
+      <section id="view-settings" class="view">
+        <div class="settings-grid">
+          <div class="card settings-card"><h3>Este equipo</h3><p>Nombre visible y carpeta donde se guardan los archivos entrantes.</p><div class="setting-stack"><div class="field"><label for="deviceName">Nombre del dispositivo</label><input id="deviceName" class="input" maxlength="80"></div><div class="field"><label for="receiveFolder">Carpeta de recepción</label><div class="inline-form"><input id="receiveFolder" class="input" readonly><button id="pickFolder" class="btn btn-ghost">Elegir</button></div></div><button id="saveLocalSettings" class="btn btn-primary">Guardar cambios</button></div></div>
+          <div class="card settings-card"><h3>Modo remoto</h3><p>Conectá la app a tu relay público para enviar archivos fuera de tu Wi‑Fi.</p><div class="setting-stack"><div class="field"><label for="remoteURL">URL pública del servidor</label><input id="remoteURL" class="input" placeholder="https://pasadatos.tudominio.com"></div><button id="saveRemoteSettings" class="btn btn-primary">Guardar y comprobar</button><div id="remoteNotice" class="status-pill"><span class="status-dot"></span><span>Sin configurar</span></div></div></div>
+          <div class="card settings-card"><h3>Comportamiento</h3><p>Configuraciones para que la app siempre esté lista.</p><div class="setting-stack"><div class="switch-row"><div class="switch-copy"><strong>Iniciar con Windows</strong><span>pasaDATOS queda disponible en segundo plano.</span></div><label class="switch"><input id="autoStart" type="checkbox"><span></span></label></div><div class="switch-row"><div class="switch-copy"><strong>Descargar automáticamente</strong><span>Guarda en la PC todo archivo recibido.</span></div><label class="switch"><input id="autoDownload" type="checkbox"><span></span></label></div><button id="saveBehavior" class="btn btn-primary">Guardar preferencias</button></div></div>
+          <div class="card settings-card appearance-card"><h3>Apariencia</h3><p>Elegí cómo querés ver pasaDATOS. La preferencia queda guardada en este dispositivo.</p><div class="theme-picker" role="group" aria-label="Tema visual"><button class="theme-option" data-theme-option="light" aria-pressed="false"><span class="theme-preview light-preview"><span></span></span><strong>Claro</strong><small>Interfaz luminosa</small></button><button class="theme-option" data-theme-option="dark" aria-pressed="false"><span class="theme-preview dark-preview"><span></span></span><strong>Oscuro</strong><small>Ideal de noche</small></button><button class="theme-option" data-theme-option="system" aria-pressed="false"><span class="theme-preview system-preview"><span></span></span><strong>Sistema</strong><small>Automático</small></button></div></div>
+          <div class="card settings-card info-card"><h3>Información</h3><p>Datos de esta instalación y acceso rápido al almacenamiento local.</p><div class="mode-detail"><div class="mode-line"><span>Versión</span><strong id="appVersion">—</strong></div><div class="mode-line"><span>ID del equipo</span><strong id="deviceID" class="mono truncate">—</strong></div></div><div class="divider"></div><button id="openReceiveSettings" class="btn btn-wide btn-ghost"><span class="icon"><svg><use href="#i-folder"/></svg></span>Abrir carpeta de recibidos</button></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+  <script src="/assets/qrcode.min.js"></script>
+  <script src="/assets/theme.js?v=1.1.1"></script>
+  <script src="/assets/desktop.js?v=1.1.1"></script>
+</body>
+</html>

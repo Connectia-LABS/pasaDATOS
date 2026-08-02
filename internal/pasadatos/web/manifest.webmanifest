@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "pasaDATOS",
+  "short_name": "pasaDATOS",
+  "description": "Transferí archivos entre tu computadora y tu celular, por Wi-Fi o de forma remota.",
+  "lang": "es-AR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#f3f7fb",
+  "theme_color": "#087cf0",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {"src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "/assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
